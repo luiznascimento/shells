@@ -1,6 +1,13 @@
 #!/bin/bash
+#
+#  @name: blockinternacionalips.sh
+#  @author: luiz.nascimento
+#
 
+#tmpfile
 ATKFILE='/tmp/ip-attackers.txt'
+
+#blockedips
 /usr/sbin/iptables -L -n  | egrep DROP | awk '{ print $4 }' > ${ATKFILE}
 
 for ATTACKER in $(for x in $(egrep "SASL LOGIN" /var/log/zimbra.log | cut -d\[ -f3 | cut -d\] -f1 | sort | uniq | awk '{ print $1 }' );
