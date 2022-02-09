@@ -48,22 +48,6 @@ do
         echo -n "$dom|"
     fi
 done)
-#
-#for domain in ${doms}
-#do
-#    let i+i=1
-#    if [[ $i -eq $(echo ${doms} | wc -w) ]]
-#    then 
-#        echo -n "$domain"
-#    else 
-#        echo "$domain|"
-#    fi
-#done > 
-#
-#echo Doms: ${doms}
-#echo DomsPipe: ${domspipe}
-
-#exit 0
 
 for dom in ${doms}
 do
