@@ -34,8 +34,6 @@ fivehour=$(echo ${fiveago} | cut -d\: -f1)
 
 echo -n > ${counterlog} > ${totalcount}
 
-#doms=(for dom in $(su -l zimbra -c "zmprov -l gad" |egrep -v "qualmbox01.a.inova.com.br|qualmbox01.aws.inova.com.br") ; do echo -n "${dom}"; done )
-
 doms=$( su -l zimbra -c "zmprov -l gad" | egrep -v "qualmbox01.a.inova.com.br|qualmbox01.aws.inova.com.br" )
 domspipe=$(for dom in ${doms}
 do
