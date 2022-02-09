@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-#  @nome: checkSpamFlow.sh
+#  @name: checkSpamFlow.sh
 #  @data: 21/10/2021
 #  @autor: Luiz Nascimento
-#  @objetivo: gerar um contador de recipientes separados por from por minuto.
+#  @objective: check mail flow from last 5 minutes, disable Zimbra mail account and notify admins.
 #
+
 #variaveis
 
 dir="/tmp/countrecipients/"
