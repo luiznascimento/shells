@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  @nome: checkSpam.sh
+#  @nome: checkSpamFlow.sh
 #  @data: 21/10/2021
 #  @autor: Luiz Nascimento
 #  @objetivo: gerar um contador de recipientes separados por from por minuto.
