@@ -57,7 +57,6 @@ do
 done
 done >> ${counterlog}
 
-
 for count in $(awk '{ print $1 }' ${counterlog} | sort | uniq ); do echo $( egrep "^${count}" ${counterlog} | awk '{ print $2 }' | paste -sd+ | bc -l) - $count ; done | sort -n > ${totalcount} 
 
 for mail in $(awk '{ print $3}' ${totalcount} )
