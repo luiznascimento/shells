@@ -96,4 +96,5 @@ echo "cleaning up tempoary files"
 rm -f /tmp/all_checkpoints.txt 2>&1
 rm -f /tmp/maintenanceaccounts.txt 2>&1
 rm -f /tmp/reactivateaccounts.txt 2>&1
+rm -f /tmp/affectedaccounts.txt 2>&1
 echo "Done."
