@@ -2,7 +2,7 @@
 #
 #  @name: checkSpamFlow.sh
 #  @data: 21/10/2021
-#  @autor: Luiz Nascimento
+#  @author: Luiz Nascimento
 #  @objective: check mail flow from last 5 minutes, disable Zimbra mail account and notify admins.
 #
 
