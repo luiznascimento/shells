@@ -75,6 +75,6 @@ reportdata=$(cat ${report} | wc -l )
 if [[ ${reportdata} > '0' ]]
 then
 	echo Enviando report.
-	mail -a /tmp/countrecipients/report.txt -s "Aviso de abuso e bloqueio" luiz.nascimento@penso.com.br <<< "Em anexo segue a lista de contas desativadas por envio abusivo"
+	mail -a /tmp/countrecipients/report.txt -s "Aviso de abuso e bloqueio" from@domain.tld <<< "Em anexo segue a lista de contas desativadas por envio abusivo"
 fi
-#mail -a /tmp/countrecipients/report.txt -s "Aviso de abuso e bloqueio" luiz.nascimento@penso.com.br <<< "Em anexo segue a lista de contas desativadas por envio abusivo"
+#mail -a /tmp/countrecipients/report.txt -s "Aviso de abuso e bloqueio" from@domain.tld <<< "Em anexo segue a lista de contas desativadas por envio abusivo"
