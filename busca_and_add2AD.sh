@@ -1,5 +1,5 @@
 #!/bin/bash
-# Penso Tecnologia
+# **** Tecnologia
 # By Andre Antonioli e Renato Rainato
 # Data: 08/07/2018
 # Ultima modificacao: 2018-08-06 17h28
