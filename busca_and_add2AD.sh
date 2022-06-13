@@ -9,7 +9,7 @@ export LC_ALL=nb_NO.UTF-8
 
 LDAPHOST="ldap-ad"
 ADUSER="email@dominio-do-cliente"
-ADPASS="dfq9ZZRd"
+ADPASS="xxxxxxxxx"
 BASEDN="AD-Base-DN"
 DOMINIO="dominio-do-cliente"
 ZMPROV="/opt/zimbra/bin/zmprov"
