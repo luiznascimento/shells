@@ -8,6 +8,15 @@ GEOI=/usr/bin/geoiplookup
 IPT=/usr/sbin/iptables
 ATKFILE='/tmp/ip-attackers.txt'
 
+if [[ -e !${GEOI} ]]
+then
+	exist=1
+else
+	echo Por favor instale o pacote do Geo IP
+    exit 0
+fi
+
+
 $IPT -L -n  | egrep DROP | awk '{ print $4 }' > ${ATKFILE}
 
 
