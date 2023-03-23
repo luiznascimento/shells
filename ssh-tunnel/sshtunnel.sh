@@ -3,27 +3,19 @@
 #  @name: sshtunnel.sh
 #  @author: Luiz Nascimento
 #  @date: 23/03/2023
-#  @email: luiz.nascimento at penso.com.br
+#  @email: anotaai
 #
 #
 
-HOSTA=${1}
-HOSTB=${2}
+PATH=${pwd}
+
+echo ${PATH}
 
 # Define a expressão regular para o formato de endereço IP
 IPREGEX='^([0-9]{1,3}\.){3}[0-9]{1,3}$'
 
-
   # Verifica se o argumento corresponde ao formato do IP
-  if [[[ $HOSTA =~ $IPREGEX ]] AND [[ $HOSTB =~ $IPREGEX ]]]
+  if [[[ $HOSTA =~ $IPREGEX ]] AND [[ $HOSTB =~ $IPREGEX ]] AND [[ $HOSTC =~ $IPREGEX ]]]
   then
-     
+     ssh fw -L 2222:0.0.0.0:2222 'bash -s' < sshtunnel-include.sh
   fi
-
-
-ssh fw -L 2222:10.30.8.21:3333
-
-
-
-
- ssh fw -L 2222:0.0.0.0:2222

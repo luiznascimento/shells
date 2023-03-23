@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#
+#
+#
+MYIP=$( echo "MY_PASSWORD" |  sudo --prompt='' -S ifconfig  | egrep 192.168 | awk '{ print $2 }' | head -1 )
+#fails=$( echo 'MY_PASSWORD' |  sudo --prompt='' -S tail -n 10000 /opt/zimbra/log/mailbox.log | egrep -i 'Failed to lock' | wc -l)
+num=$(w | awk -F'average:' '{ print $2 }' | egrep -v '^$' | awk '{ print $1 }' | cut -d\, -f1 | cut -d\. -f1) 
+load_status=$((( 10 > ${num} )) && echo -e "\e[1;32mOK\e[0m" || echo -e "\e[1;31mFAIL\e[0m")
+countvarwebmail=$(timeout 5 curl https://${MYIP}:8443 -k -s | wc -l) 
+countvarzadmin=$(timeout 5 curl https://${MYIP}:7071 -k -s -L | wc -l) 
+#count_page_webmail="363"
+memused=$(free -m | egrep Mem: | awk '{ print "(Total: "$2"KB) (Used: "$3"KB) (Buffer: "$5"KB)"}')
+#freeSpace=$(df -h | egrep "/opt" | awk '{ print $4 }')
+
+echo -e "\e[1;35m Hostname:\e[0m$(echo $(hostname) | sed 's/.penso.com.br//g') | \e[1;35mIP:\e[0m ${MYIP} | \e[1;35mLoad Average:\e[0m $(w | egrep load | awk -F'average: ' '{ print $2 }')\e[0m |\e[1;35m Load Status:\e[0m\e[1;35m ${load_status}\e[0m"
+echo -e " \e[1;35mWebmail (Loading):\e[0m$((( "${countvarwebmail}" < "364" )) && echo -e '\e[1;31m FAIL \e[0m' || echo -e '\e[1;32m OK \e[0m') | \e[1;35mConsole Admin (Loading):\e[0m $((( "${countvarzadmin}" < "1800" )) && echo -e '\e[1;31m FAIL \e[0m' || echo -e '\e[1;32m OK \e[0m') | \e[1;35m Memory:\e[0m ${memused}"

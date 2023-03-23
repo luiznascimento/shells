@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "" ; echo -e "\e[1;37m STARTING: \e[0m" ; for srv in $(cat mbxs | egrep -v "#") ; do echo -e -n "\e[1;94m $( date +%d"/"%m"/"%y" - "%H:%M:%S ) \e[0m"; ssh -o "StrictHostKeyChecking=no" -o "ConnectTimeout=10" ${srv} 'bash -s' < getinfo ; countvar=$(curl https://${srv}:8443 -k -s | wc -l) ; echo "" ; done
