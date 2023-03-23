@@ -1,9 +1,11 @@
 #!/bin/bash
 #
-#  @author: luiz nascimento
-#  @name: mount_path.sh
-#  @description: generate path of blob message in zimbra
+#  @version: 0.1
+#  @date: 04/13/2019
+#  @author: Luiz Nascimento
+#  Generate message path from Mailbox ID and Message or Item ID
 #
+
 
 idaccount=$1
 idmessage=$2

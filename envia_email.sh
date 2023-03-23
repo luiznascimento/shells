@@ -26,7 +26,7 @@ To: $teste <$teste>
 Subject: Teste de envio - $(hostname)
 Content-Type: text/plain; charset=UTF-8
                                                                                                                                                                                                
-Olá ${teste};
+Olá$teste1;
  
 Este é apenas um teste de envio e entrega a partir do servidor $(hostname).
 

@@ -23,7 +23,7 @@ i=1
 
 for lsrv in ${lsrvs};
 do   
-    eval srv${i}=$(${lsearch} -H ldap://${lsrv}:389 -D cn=config -w B5_Wo8f6o '(&(objectClass=zimbraAccount)(zimbraMailDeliveryAddress=*))' zimbraMailDeliveryAddress | egrep "^zimbraMailDeliveryAddress" | awk '{ print $2 }' | wc -l)
+    eval srv${i}=$(${lsearch} -H ldap://${lsrv}:389 -D cn=config -w ${lpwd} '(&(objectClass=zimbraAccount)(zimbraMailDeliveryAddress=*))' zimbraMailDeliveryAddress | egrep "^zimbraMailDeliveryAddress" | awk '{ print $2 }' | wc -l)
     let i++ 
 done
 }
