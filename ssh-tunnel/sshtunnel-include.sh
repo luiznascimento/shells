@@ -3,7 +3,7 @@
 #  @name: sshtunnel.sh
 #  @author: Luiz Nascimento
 #  @date: 23/03/2023
-#  @email: luiz.nascimento at penso.com.br
+#  @email: luiz.nascimento at me.com
 #
 #
  

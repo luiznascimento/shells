@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 #  @version: 0.1
+#  @name: findmessagepath.sh
 #  @date: 04/13/2019
 #  @author: Luiz Nascimento
 #  Generate message path from Mailbox ID and Message or Item ID
